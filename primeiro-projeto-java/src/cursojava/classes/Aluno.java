@@ -1,5 +1,8 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Esta é nossa classe/objeto que representa o Aluno
  * @author Junior
@@ -19,7 +22,7 @@ public class Aluno{
 	private String serieMatriculado;
 	private String nomeEscola;
 	
-	private Disciplina disciplina = new Disciplina();
+	private List<Disciplina> disciplina = new ArrayList<Disciplina>();
 	
 	/*Cria dos dados na memoria - sendo padrão do Java*/
 	public Aluno() {}
@@ -104,17 +107,21 @@ public class Aluno{
 		this.nomeEscola = nomeEscola;
 	}
 	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
-	
-	public Disciplina getDisciplina() {
+	public List<Disciplina> getDisciplina() {
 		return disciplina;
 	}
+	
+	public void setDisciplina(List<Disciplina> disciplina) {
+		this.disciplina = disciplina;
+	}
 
-	/*Método que retorna a média do aluno*/
+	/**
+	 * Método que retorna a média do aluno
+	 * @author Gilmar Junior
+	 * @since 11/2022
+	 **/
 	public double getMediaNotas() {
-		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4())/4;
+		return 0;
 	}
 	
 	public boolean getAlunoAprovado() {
@@ -162,6 +169,6 @@ public class Aluno{
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", serieMatriculado=" + serieMatriculado + ", nomeEscola="
-				+ nomeEscola + ", disciplina=" + disciplina + "]";
+				+ nomeEscola + "]";
 	}
 }
