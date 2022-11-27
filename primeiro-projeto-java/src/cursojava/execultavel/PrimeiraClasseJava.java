@@ -3,6 +3,7 @@ package cursojava.execultavel;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Disciplina;
 
 public class PrimeiraClasseJava {
 
@@ -52,7 +53,25 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado(serieAluno);
 		aluno1.setNomeEscola(nomeEscola);
 		
+		Disciplina disciplina10 = new Disciplina();
+		disciplina10.setDisciplina("java");
+		disciplina10.setNota(10);
+		aluno1.getDisciplina().add(disciplina10);
 		
+		Disciplina disciplina11 = new Disciplina();
+		disciplina11.setDisciplina("java ee");
+		disciplina11.setNota(10);
+		aluno1.getDisciplina().add(disciplina11);
+		
+		Disciplina disciplina12 = new Disciplina();
+		disciplina11.setDisciplina("java se");
+		disciplina11.setNota(12);
+		aluno1.getDisciplina().add(disciplina12);
+		
+		Disciplina disciplina13 = new Disciplina();
+		disciplina11.setDisciplina("java me");
+		disciplina11.setNota(13);
+		aluno1.getDisciplina().add(disciplina13);
 		
 		System.out.println("---------------------------------------");
 		System.out.println("Nome é = " + aluno1.getNome());

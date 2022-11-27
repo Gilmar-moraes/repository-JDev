@@ -22,7 +22,7 @@ public class Aluno{
 	private String serieMatriculado;
 	private String nomeEscola;
 	
-	private List<Disciplina> disciplina = new ArrayList<Disciplina>();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	/*Cria dos dados na memoria - sendo padrão do Java*/
 	public Aluno() {}
@@ -108,11 +108,11 @@ public class Aluno{
 	}
 	
 	public List<Disciplina> getDisciplina() {
-		return disciplina;
+		return disciplinas;
 	}
 	
 	public void setDisciplina(List<Disciplina> disciplina) {
-		this.disciplina = disciplina;
+		this.disciplinas = disciplina;
 	}
 
 	/**
@@ -121,7 +121,14 @@ public class Aluno{
 	 * @since 11/2022
 	 **/
 	public double getMediaNotas() {
-		return 0;
+		
+		double somaNotas = 0.0;
+		
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		
+		return somaNotas/disciplinas.size();
 	}
 	
 	public boolean getAlunoAprovado() {
