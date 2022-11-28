@@ -42,6 +42,9 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado(serieAluno);
 		aluno1.setNomeEscola(nomeEscola);
 
+		/**
+		 * Adicionar disciplina na lista de disciplina do aluno
+		 **/
 		for (int pos = 1; pos <= 4; pos++) {
 
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da Disciplina" + pos + "?");
@@ -52,6 +55,16 @@ public class PrimeiraClasseJava {
 			disciplina.setNota(Double.valueOf(notaDisciplina));
 
 			aluno1.getDisciplina().add(disciplina);
+		}
+		
+		/**
+		 * Removendo disciplina da lista de disciplina do aluno
+		 **/
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+		
+		if (escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover?");
+			aluno1.getDisciplina().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
 		}
 
 		System.out.println("---------------------------------------");
