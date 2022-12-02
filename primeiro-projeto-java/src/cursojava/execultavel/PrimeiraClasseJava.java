@@ -63,8 +63,16 @@ public class PrimeiraClasseJava {
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
 		
 		if (escolha == 0) {
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover?");
-			aluno1.getDisciplina().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+			
+			int continuarRemover = 0;
+			int posicao = 1;
+			
+			while (continuarRemover == 0) {
+				String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover?");
+				aluno1.getDisciplina().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
+				posicao ++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover alguma disciplina?");
+			}
 		}
 
 		System.out.println("---------------------------------------");
