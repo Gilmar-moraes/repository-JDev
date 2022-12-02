@@ -5,11 +5,12 @@ import java.util.List;
 
 /**
  * Esta é nossa classe/objeto que representa o Aluno
+ * 
  * @author Junior
  *
  */
-public class Aluno{
-	
+public class Aluno {
+
 	private String nome;
 	private int idade;
 	private String dataNascimento;
@@ -17,15 +18,16 @@ public class Aluno{
 	private String numeroCpf;
 	private String nomeMae;
 	private String nomePai;
-	
+
 	private String dataMatricula;
 	private String serieMatriculado;
 	private String nomeEscola;
-	
+
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
-	
-	/*Cria dos dados na memoria - sendo padrão do Java*/
-	public Aluno() {}
+
+	/* Cria dos dados na memoria - sendo padrão do Java */
+	public Aluno() {
+	}
 
 	public String getNome() {
 		return nome;
@@ -106,37 +108,51 @@ public class Aluno{
 	public void setNomeEscola(String nomeEscola) {
 		this.nomeEscola = nomeEscola;
 	}
-	
+
 	public List<Disciplina> getDisciplina() {
 		return disciplinas;
 	}
-	
+
 	public void setDisciplina(List<Disciplina> disciplina) {
 		this.disciplinas = disciplina;
 	}
 
 	/**
 	 * Método que retorna a média do aluno
+	 * 
 	 * @author Gilmar Junior
 	 * @since 11/2022
 	 **/
 	public double getMediaNotas() {
-		
+
 		double somaNotas = 0.0;
-		
+
 		for (Disciplina disciplina : disciplinas) {
 			somaNotas += disciplina.getNota();
 		}
-		
-		return somaNotas/disciplinas.size();
+
+		return somaNotas / disciplinas.size();
 	}
-	
+
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNotas();
 		if (media >= 7) {
 			return true;
-		}else {
+		} else {
 			return false;
+		}
+	}
+
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNotas();
+		if (media >= 5) {
+			if (media >= 7) {
+				return "Aluno aprovado";
+			} else {
+				return "Aluno em recuperação";
+			}
+		} else {
+			return "Aluno esta reprovado";
 		}
 	}
 
