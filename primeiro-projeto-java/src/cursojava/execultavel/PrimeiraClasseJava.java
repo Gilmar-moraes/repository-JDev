@@ -84,7 +84,7 @@ public class PrimeiraClasseJava {
 
 		} // fim do for
 
-		for (Aluno aluno : listAlunos) {
+		/*for (Aluno aluno : listAlunos) {
 
 			if (aluno.getNome().equalsIgnoreCase("Alex")) {
 				listAlunos.remove(aluno);
@@ -107,6 +107,22 @@ public class PrimeiraClasseJava {
 			
 			for (Disciplina disciplina : aluno.getDisciplina()) {
 				System.out.println(disciplina.getDisciplina());
+			}
+		}*/
+		
+		for (int pos = 0; pos < listAlunos.size(); pos++) {
+			Aluno aluno = listAlunos.get(pos);
+			
+			System.out.println("---------------------------------------");
+			System.out.println("Nome é = " + aluno.getNome());
+			System.out.println("Idade é = " + aluno.getIdade());
+			System.out.println("Nascimento é = " + aluno.getDataNascimento());
+			System.out.println("Media das notas do aluno " + aluno.getNome() + " é:" + aluno.getMediaNotas());
+			System.out.println("Resultado: " + (aluno.getAlunoAprovado() ? "Aprovado" : "Resprovado"));
+			System.out.println("---------------------------------------");
+			
+			for (Disciplina disciplinas : aluno.getDisciplina()) {
+				System.out.println(disciplinas.getDisciplina());
 			}
 		}
 	}
