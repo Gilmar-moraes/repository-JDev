@@ -113,6 +113,20 @@ public class PrimeiraClasseJava {
 		for (int pos = 0; pos < listAlunos.size(); pos++) {
 			Aluno aluno = listAlunos.get(pos);
 			
+			if (aluno.getNome().equalsIgnoreCase("gilmar")) {
+				Aluno trocar = new Aluno();
+				trocar.setNome("Aluno foi trocado");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Matematica");
+				disciplina.setNota(10);
+				
+				trocar.getDisciplina().add(disciplina);
+				
+				listAlunos.set(pos, trocar);
+				aluno = listAlunos.get(pos);
+			}
+			
 			System.out.println("---------------------------------------");
 			System.out.println("Nome é = " + aluno.getNome());
 			System.out.println("Idade é = " + aluno.getIdade());
