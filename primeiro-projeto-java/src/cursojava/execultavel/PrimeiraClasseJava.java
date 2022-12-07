@@ -13,17 +13,12 @@ import cursojava.classes.constantes.StatusAluno;
 public class PrimeiraClasseJava {
 
 	/* Main é um metodo auto executavel do java */
-	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		List<Aluno> listAlunos = new ArrayList<Aluno>();
 		
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
-
-		List<Aluno> listAlunosAprovados = new ArrayList<Aluno>();
-		List<Aluno> listAlunosRecuperacao = new ArrayList<Aluno>();
-		List<Aluno> listAlunosReprovados = new ArrayList<Aluno>();
 
 		for (int qtd = 0; qtd <= 1; qtd++) {
 
@@ -92,28 +87,32 @@ public class PrimeiraClasseJava {
 			listAlunos.add(aluno1);
 		} // fim do for
 
+		maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
+		
 		for (Aluno aluno : listAlunos) {
 			if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
-				listAlunosAprovados.add(aluno);
+				maps.get(StatusAluno.APROVADO);
 			} else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
-				listAlunosRecuperacao.add(aluno);
+				maps.get(StatusAluno.RECUPERACAO);
 			} else {
-				listAlunosReprovados.add(aluno);
+				maps.get(StatusAluno.REPROVADO);
 			}
 		}
 		
 		System.out.println("--------------------Lista Aprovados----------------------");
-		for (Aluno aluno : listAlunosAprovados) {
+		for (Aluno aluno : maps.get(StatusAluno.APROVADO)) {
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com a média de = " + aluno.getMediaNotas());
 		}
 		
 		System.out.println("--------------------Lista Recuperação----------------------");
-		for (Aluno aluno : listAlunosRecuperacao) {
+		for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com a média de = " + aluno.getMediaNotas());
 		}
 		
 		System.out.println("--------------------Lista Reprovados----------------------");
-		for (Aluno aluno : listAlunosReprovados) {
+		for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com a média de = " + aluno.getMediaNotas());
 		}
 
