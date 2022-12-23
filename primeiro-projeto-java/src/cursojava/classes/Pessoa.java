@@ -77,6 +77,15 @@ public class Pessoa {
 		this.nomePai = nomePai;
 	}
 
+	/**
+	 * Retorna true caso seja maior ou igual a 18 anos
+	 * senão false se for menor de 18 anos
+	 * @return true or false
+	 */
+	public boolean pessoaMaiorIdade() {
+		return this.idade >= 18;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(dataNascimento, idade, nome, nomeMae, nomePai, numeroCpf, registroGeral);

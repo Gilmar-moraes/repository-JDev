@@ -151,6 +151,19 @@ public class Aluno extends Pessoa{
 	}
 
 	@Override
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		if (super.idade >= 18 && super.idade <= 55) {
+			return super.pessoaMaiorIdade();
+		}
+		return false;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "maior" : "menor";
+	}
+	
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
