@@ -8,10 +8,7 @@ public class Secretario extends Pessoa{
 	private String nivelCargo;
 	private String expareincia;
 	
-	private void Scretario() {
-		// TODO Auto-generated method stub
-
-	}
+	public Secretario() {}
 
 	public String getRegistro() {
 		return registro;
@@ -60,6 +57,8 @@ public class Secretario extends Pessoa{
 
 	@Override
 	public String toString() {
-		return "Secretario [registro=" + registro + ", nivelCargo=" + nivelCargo + ", expareincia=" + expareincia + "]";
+		return "Secretario [registro=" + registro + ", nivelCargo=" + nivelCargo + ", expareincia=" + expareincia
+				+ ", nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
 }

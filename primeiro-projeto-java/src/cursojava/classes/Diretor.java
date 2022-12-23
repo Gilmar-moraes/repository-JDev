@@ -8,7 +8,7 @@ public class Diretor extends Pessoa{
 	private int tempoDirecao;
 	private String titulacao;
 	
-	private void Diretor() {}
+	public Diretor() {}
 
 	public String getRegitroEducacao() {
 		return regitroEducacao;
@@ -58,6 +58,8 @@ public class Diretor extends Pessoa{
 	@Override
 	public String toString() {
 		return "Diretor [regitroEducacao=" + regitroEducacao + ", tempoDirecao=" + tempoDirecao + ", titulacao="
-				+ titulacao + "]";
+				+ titulacao + ", nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento
+				+ ", registroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae
+				+ ", nomePai=" + nomePai + "]";
 	}
 }

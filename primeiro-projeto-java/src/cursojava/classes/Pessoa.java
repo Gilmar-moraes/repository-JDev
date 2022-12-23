@@ -1,7 +1,12 @@
 package cursojava.classes;
 
 import java.util.Objects;
-
+/**
+ * Classe pai, master ou superclasse
+ * atributos comuns a todos os objetos filhos
+ * @author Junior
+ *
+ */
 public class Pessoa {
 
 	protected String nome;
