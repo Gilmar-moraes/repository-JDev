@@ -26,6 +26,7 @@ public abstract class TestandoClassesFilhas {
 		System.out.println(secretario);
 		
 		System.out.println(aluno.pessoaMaiorIdade() + ":" + aluno.msgMaiorIdade());
+		System.out.println("Salario do aluno:" + aluno.getNome() + aluno.salario());
 		System.out.println(diretor.pessoaMaiorIdade());
 		System.out.println(secretario.pessoaMaiorIdade());
 	}

@@ -201,4 +201,10 @@ public class Aluno extends Pessoa{
 				+ ", dataMatricula=" + dataMatricula + ", serieMatriculado=" + serieMatriculado + ", nomeEscola="
 				+ nomeEscola + "]";
 	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 1500.90;
+	}
 }

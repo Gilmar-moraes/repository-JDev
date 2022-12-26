@@ -78,6 +78,13 @@ public abstract class Pessoa {
 	}
 
 	/**
+	 * Método abstrato na classe pai
+	 * é obrigatorio para as classes filhas.
+	 * @return
+	 */
+	public abstract double salario();
+	
+	/**
 	 * Retorna true caso seja maior ou igual a 18 anos
 	 * senão false se for menor de 18 anos
 	 * @return true or false
