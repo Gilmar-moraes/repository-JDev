@@ -20,14 +20,8 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o Login:");
 		String senha = JOptionPane.showInputDialog("Informe o Senha:");
 
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
-		
-		//if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		if (new Secretario().autenticar(login, senha)) {
 
-		if (secretario.autenticar()) {
-			
 			List<Aluno> listAlunos = new ArrayList<Aluno>();
 
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
@@ -131,55 +125,7 @@ public class PrimeiraClasseJava {
 				System.out.println(
 						"Resultado = " + aluno.getAlunoAprovado2() + " com a média de = " + aluno.getMediaNotas());
 			}
-
-			/*
-			 * for (Aluno aluno : listAlunos) {
-			 * 
-			 * if (aluno.getNome().equalsIgnoreCase("Alex")) { listAlunos.remove(aluno);
-			 * break; } else {
-			 * System.out.println("---------------------------------------");
-			 * System.out.println("Nome é = " + aluno.getNome());
-			 * System.out.println("Idade é = " + aluno.getIdade());
-			 * System.out.println("Nascimento é = " + aluno.getDataNascimento());
-			 * System.out.println("Media das notas do aluno " + aluno.getNome() + " é:" +
-			 * aluno.getMediaNotas()); System.out.println("Resultado: " +
-			 * (aluno.getAlunoAprovado() ? "Aprovado" : "Resprovado"));
-			 * System.out.println("---------------------------------------"); } }
-			 * 
-			 * for (Aluno aluno : listAlunos) {
-			 * System.out.println("Alunos que sobraram na lista:");
-			 * System.out.println(aluno.getNome());
-			 * System.out.println("Suas materias são:");
-			 * 
-			 * for (Disciplina disciplina : aluno.getDisciplina()) {
-			 * System.out.println(disciplina.getDisciplina()); } }
-			 * 
-			 * for (int pos = 0; pos < listAlunos.size(); pos++) { Aluno aluno =
-			 * listAlunos.get(pos);
-			 * 
-			 * if (aluno.getNome().equalsIgnoreCase("gilmar")) { Aluno trocar = new Aluno();
-			 * trocar.setNome("Aluno foi trocado");
-			 * 
-			 * Disciplina disciplina = new Disciplina();
-			 * disciplina.setDisciplina("Matematica"); disciplina.setNota(10);
-			 * 
-			 * trocar.getDisciplina().add(disciplina);
-			 * 
-			 * listAlunos.set(pos, trocar); aluno = listAlunos.get(pos); }
-			 * 
-			 * System.out.println("---------------------------------------");
-			 * System.out.println("Nome é = " + aluno.getNome());
-			 * System.out.println("Idade é = " + aluno.getIdade());
-			 * System.out.println("Nascimento é = " + aluno.getDataNascimento());
-			 * System.out.println("Media das notas do aluno " + aluno.getNome() + " é:" +
-			 * aluno.getMediaNotas()); System.out.println("Resultado: " +
-			 * (aluno.getAlunoAprovado() ? "Aprovado" : "Resprovado"));
-			 * System.out.println("---------------------------------------");
-			 * 
-			 * for (Disciplina disciplinas : aluno.getDisciplina()) {
-			 * System.out.println(disciplinas.getDisciplina()); } }
-			 */
-		}else {
+		} else {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 	}

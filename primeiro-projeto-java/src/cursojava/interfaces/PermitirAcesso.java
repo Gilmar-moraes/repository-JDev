@@ -5,5 +5,5 @@ public interface PermitirAcesso {
 	/*
 	 * Apanas declaração do métodos
 	 */
-	public boolean autenticar();
+	public boolean autenticar(String login, String senha);
 }
