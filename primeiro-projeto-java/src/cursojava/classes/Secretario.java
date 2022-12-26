@@ -2,11 +2,16 @@ package cursojava.classes;
 
 import java.util.Objects;
 
-public class Secretario extends Pessoa{
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso{
 
 	private String registro;
 	private String nivelCargo;
 	private String expareincia;
+	
+	private String login;
+	private String senha;
 	
 	public Secretario() {}
 
@@ -34,6 +39,22 @@ public class Secretario extends Pessoa{
 		this.expareincia = expareincia;
 	}
 
+	public String getLogin() {
+		return login;
+	}
+	
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+	
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -66,5 +87,11 @@ public class Secretario extends Pessoa{
 	public double salario() {
 		// TODO Auto-generated method stub
 		return 1800.80 * 0.9;
+	}
+
+	@Override
+	public boolean autenticar() {
+		// TODO Auto-generated method stub
+		return login.equals("admin") && senha.equals("admim");
 	}
 }
