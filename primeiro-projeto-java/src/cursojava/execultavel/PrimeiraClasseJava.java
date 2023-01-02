@@ -1,5 +1,6 @@
 package cursojava.execultavel;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -130,7 +131,7 @@ public class PrimeiraClasseJava {
 				JOptionPane.showMessageDialog(null, "Acesso não permitido");
 			}
 
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			// TODO: handle exception
 			
 			StringBuilder saida = new StringBuilder();
@@ -145,7 +146,11 @@ public class PrimeiraClasseJava {
 				saida.append("\n Linha de erro: " + e.getStackTrace()[i].getLineNumber());
 			}
 			
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + saida.toString());
+			JOptionPane.showMessageDialog(null, "Erro de conversão de número" + saida.toString());
+			
+		} catch (NullPointerException e) {
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(null, "Erro de referecia nula de número" + e.getClass());
 		}
 	}
 }
