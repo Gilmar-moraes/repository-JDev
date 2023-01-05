@@ -160,6 +160,8 @@ public class PrimeiraClasseJava {
 			// TODO: handle exception
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
+		} finally {
+			System.out.println("é isso!!");
 		}
 	}
 }
