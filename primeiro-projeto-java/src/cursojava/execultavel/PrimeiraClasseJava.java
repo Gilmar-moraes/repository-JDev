@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 import cursojava.classes.Aluno;
@@ -19,6 +20,9 @@ public class PrimeiraClasseJava {
 		// TODO Auto-generated method stub
 
 		try {
+			File fl = new File("arquivo.txt");
+			Scanner sc = new Scanner(fl);
+			
 			String login = JOptionPane.showInputDialog("Informe o Login:");
 			String senha = JOptionPane.showInputDialog("Informe o Senha:");
 
@@ -151,6 +155,11 @@ public class PrimeiraClasseJava {
 		} catch (NullPointerException e) {
 			// TODO: handle exception
 			JOptionPane.showMessageDialog(null, "Erro de referecia nula de número" + e.getClass());
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
 		}
 	}
 }
