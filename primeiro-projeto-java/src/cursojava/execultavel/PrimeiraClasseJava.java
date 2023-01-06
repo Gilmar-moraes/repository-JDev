@@ -1,6 +1,7 @@
 package cursojava.execultavel;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,16 +13,23 @@ import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classes.constantes.StatusAluno;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
+import cursojava.excecao.ExcecaoProcessarNota;
 
 public class PrimeiraClasseJava {
 
 	/* Main é um metodo auto executavel do java */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		try {
-			File fl = new File("arquivo.txt");
-			Scanner sc = new Scanner(fl);
+			lerArquivo();
+			/*try {
+				File fl = new File("arquivo.txt");
+				Scanner sc = new Scanner(fl);
+				
+			} catch (FileNotFoundException e) {
+				// TODO: handle exception
+				throw new ExcecaoProcessarNota("Erro no arquivo");
+			}*/
 			
 			String login = JOptionPane.showInputDialog("Informe o Login:");
 			String senha = JOptionPane.showInputDialog("Informe o Senha:");
@@ -162,6 +170,16 @@ public class PrimeiraClasseJava {
 			JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
 		} finally {
 			System.out.println("é isso!!");
+		}
+	}
+	
+	public static void lerArquivo() throws ExcecaoProcessarNota {
+		try {
+			File fl = new File("arquivo.txt");
+			Scanner sc = new Scanner(fl);
+		} catch (FileNotFoundException e) {
+			// TODO: handle exception
+			throw new ExcecaoProcessarNota(e.getMessage());
 		}
 	}
 }
